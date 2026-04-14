@@ -4,11 +4,17 @@ app_publisher = "Your Company"
 app_description = "Operations Module for ERPNext 15 — Qatar/UAE Manpower & Construction"
 app_email = "admin@yourcompany.com"
 app_license = "MIT"
+app_version = "1.0.0"
 
-# Apps
+# Required apps
 required_apps = ["frappe", "erpnext"]
 
-# DocTypes with after-event hooks
+# ── No frontend bundles (backend-only app) ──────────────────────
+# This tells bench build to skip this app
+app_include_js = []
+app_include_css = []
+
+# ── DocType event hooks ──────────────────────────────────────────
 doc_events = {
     "Daily Manpower Schedule": {
         "on_submit": "operations_module.api.attendance_sync.on_manpower_schedule_submit",
@@ -25,7 +31,7 @@ doc_events = {
     },
 }
 
-# Scheduled Tasks
+# ── Scheduled Tasks ──────────────────────────────────────────────
 scheduler_events = {
     "daily": [
         "operations_module.api.kpi_engine.run_daily_kpis",
@@ -41,23 +47,27 @@ scheduler_events = {
     ],
 }
 
-# Fixtures — export these to keep settings in version control
+# ── Fixtures ────────────────────────────────────────────────────
 fixtures = [
     "Custom Field",
     "Property Setter",
     "Workspace",
     {
         "doctype": "Role",
-        "filters": [["role_name", "in", ["Operations Manager", "Operations Supervisor", "Operations Viewer"]]]
+        "filters": [["role_name", "in", [
+            "Operations Manager",
+            "Operations Supervisor",
+            "Operations Viewer"
+        ]]]
     },
 ]
 
-# Website
+# ── Website ─────────────────────────────────────────────────────
 website_route_rules = [
-    {"from_route": "/client-feedback/<name>", "to_route": "client-feedback"},
+    {"from_route": "/client-feedback/<n>", "to_route": "client-feedback"},
 ]
 
-# Jinja environment
+# ── Jinja ───────────────────────────────────────────────────────
 jinja = {
     "methods": ["operations_module.api.utils.get_ops_setting"],
 }

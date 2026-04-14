@@ -1,0 +1,31 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"naming_series","fieldtype":"Series","options":"TRN-"},
+  {"fieldname":"training_name","fieldtype":"Data","label":"Training Name","reqd":1,"in_list_view":1},
+  {"fieldname":"training_type","fieldtype":"Select","label":"Type","options":"Safety\nTechnical\nCompliance\nSoft Skills\nInduction","in_list_view":1},
+  {"fieldname":"frequency","fieldtype":"Select","label":"Frequency","options":"One-time\nMonthly\nQuarterly\nAnnual","default":"Annual","in_list_view":1},
+  {"fieldname":"start_date","fieldtype":"Date","label":"Start Date","reqd":1},
+  {"fieldname":"next_due_date","fieldtype":"Date","label":"Next Due Date","read_only":1},
+  {"fieldname":"employee_group","fieldtype":"Link","label":"Employee Group","options":"Employee Group"},
+  {"fieldname":"project","fieldtype":"Link","label":"Project","options":"Project"},
+  {"fieldname":"is_mandatory","fieldtype":"Check","label":"Mandatory","default":1},
+  {"fieldname":"completion_pct","fieldtype":"Percent","label":"Completion %","read_only":1},
+  {"fieldname":"sb_sessions","fieldtype":"Section Break","label":"Sessions"},
+  {"fieldname":"sessions","fieldtype":"Table","label":"Sessions","options":"Training Session"}
+ ],
+ "links": [],
+ "module": "Operations Module",
+ "name": "Training Schedule",
+ "owner": "Administrator",
+ "permissions": [
+  {"role":"Operations Manager","read":1,"write":1,"create":1,"delete":1},
+  {"role":"Operations Supervisor","read":1,"write":1,"create":1}
+ ],
+ "sort_field": "start_date",
+ "sort_order": "DESC"
+}

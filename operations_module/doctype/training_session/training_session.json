@@ -1,0 +1,18 @@
+{
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"session_date","fieldtype":"Date","label":"Session Date","reqd":1,"in_list_view":1},
+  {"fieldname":"trainer","fieldtype":"Data","label":"Trainer","in_list_view":1},
+  {"fieldname":"venue","fieldtype":"Data","label":"Venue"},
+  {"fieldname":"duration_hours","fieldtype":"Float","label":"Duration (hrs)"},
+  {"fieldname":"attended_count","fieldtype":"Int","label":"Attended","in_list_view":1},
+  {"fieldname":"status","fieldtype":"Select","label":"Status","options":"Planned\nCompleted\nCancelled","default":"Planned","in_list_view":1},
+  {"fieldname":"notes","fieldtype":"Small Text","label":"Notes"}
+ ],
+ "istable": 1,
+ "module": "Operations Module",
+ "name": "Training Session",
+ "owner": "Administrator"
+}
