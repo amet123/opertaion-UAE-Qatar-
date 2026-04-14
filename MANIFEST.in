@@ -1,0 +1,2 @@
+include requirements.txt
+recursive-include operations_module *.json *.js *.css *.html *.py
