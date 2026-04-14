@@ -1,0 +1,125 @@
+{% extends "templates/web.html" %}
+{% block title %}Client Feedback{% endblock %}
+{% block page_content %}
+<div class="container" style="max-width:680px;margin:40px auto">
+    <div class="text-center" style="margin-bottom:32px">
+        <h3>Service Feedback Form</h3>
+        <p class="text-muted" id="subtitle">Loading...</p>
+    </div>
+
+    <div id="feedback-form" style="display:none">
+        <div id="rating-sections"></div>
+        <div class="form-group" style="margin-top:24px">
+            <label><strong>Overall Comments</strong></label>
+            <textarea id="overall-comment" class="form-control" rows="4"
+                placeholder="Any additional feedback..."></textarea>
+        </div>
+        <button id="submit-btn" class="btn btn-primary btn-block" style="margin-top:20px">
+            Submit Feedback
+        </button>
+    </div>
+
+    <div id="invalid-msg" style="display:none" class="alert alert-danger">
+        This feedback link has expired or is invalid. Please contact your project manager.
+    </div>
+
+    <div id="thank-you" style="display:none" class="text-center" style="margin-top:40px">
+        <h4 style="color:#28a745">Thank you for your feedback!</h4>
+        <p class="text-muted">Your response has been recorded.</p>
+    </div>
+</div>
+
+<script>
+const PARAMETERS = [
+    "Workforce Professionalism",
+    "Work Quality",
+    "Timeliness & Punctuality",
+    "Site Safety & Cleanliness",
+    "Communication & Responsiveness",
+    "Issue Resolution",
+];
+
+const params = new URLSearchParams(window.location.search);
+const project = params.get("project");
+const token   = params.get("token");
+
+async function init() {
+    document.getElementById("subtitle").textContent =
+        `Project: ${project || "Unknown"} — ${new Date().toLocaleString("en", {month:"long", year:"numeric"})}`;
+
+    const resp = await frappe.call({
+        method: "operations_module.api.feedback.verify_token",
+        args: { token, project },
+    });
+
+    if (!resp.message || !resp.message.valid) {
+        document.getElementById("invalid-msg").style.display = "block";
+        return;
+    }
+
+    document.getElementById("feedback-form").style.display = "block";
+    render_ratings();
+}
+
+function render_ratings() {
+    const html = PARAMETERS.map((p, i) => `
+        <div class="frappe-card" style="padding:16px;margin-bottom:12px">
+            <label style="font-weight:500;margin-bottom:8px;display:block">${p}</label>
+            <div class="star-rating" data-index="${i}">
+                ${[1,2,3,4,5].map(n => `
+                    <span class="star" data-val="${n}" onclick="rate(${i},${n})"
+                        style="font-size:26px;cursor:pointer;color:#ccc">&#9733;</span>
+                `).join("")}
+                <span class="rating-val text-muted" style="margin-left:8px;font-size:13px"></span>
+            </div>
+            <textarea class="form-control comment-box" style="margin-top:8px"
+                rows="2" placeholder="Comments (optional)"></textarea>
+        </div>
+    `).join("");
+    document.getElementById("rating-sections").innerHTML = html;
+}
+
+window._ratings = {};
+function rate(idx, val) {
+    window._ratings[idx] = val;
+    const stars = document.querySelectorAll(`.star-rating[data-index="${idx}"] .star`);
+    stars.forEach((s, i) => s.style.color = i < val ? "#f0b429" : "#ccc");
+    document.querySelector(`.star-rating[data-index="${idx}"] .rating-val`)
+        .textContent = ["","Poor","Fair","Good","Very Good","Excellent"][val];
+}
+
+document.addEventListener("click", async (e) => {
+    if (e.target.id !== "submit-btn") return;
+    const btn = e.target;
+    const ratings = PARAMETERS.map((p, i) => ({
+        parameter: p,
+        rating: window._ratings[i] || 0,
+        comments: document.querySelectorAll(".comment-box")[i]?.value || "",
+    }));
+    const missing = ratings.filter(r => r.rating === 0);
+    if (missing.length) {
+        frappe.msgprint(`Please rate all ${missing.length} remaining parameter(s).`);
+        return;
+    }
+    btn.disabled = true;
+    btn.textContent = "Submitting...";
+    const r = await frappe.call({
+        method: "operations_module.api.feedback.submit_feedback",
+        args: {
+            token, project,
+            ratings: JSON.stringify(ratings),
+            overall_comment: document.getElementById("overall-comment").value,
+        },
+    });
+    if (r.message && r.message.success) {
+        document.getElementById("feedback-form").style.display  = "none";
+        document.getElementById("thank-you").style.display = "block";
+    } else {
+        btn.disabled = false;
+        btn.textContent = "Submit Feedback";
+    }
+});
+
+frappe.ready(init);
+</script>
+{% endblock %}

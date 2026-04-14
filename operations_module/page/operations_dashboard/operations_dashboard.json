@@ -1,0 +1,9 @@
+{
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "Page",
+ "module": "Operations Module",
+ "name": "operations-dashboard",
+ "page_name": "operations-dashboard",
+ "roles": [{"role":"Operations Manager"},{"role":"Operations Supervisor"},{"role":"Operations Viewer"}],
+ "title": "Operations Dashboard"
+}

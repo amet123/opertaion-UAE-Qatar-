@@ -1,0 +1,16 @@
+[
+ {"doctype":"Custom Field","dt":"Employee","fieldname":"custom_hourly_rate","label":"Hourly Rate","fieldtype":"Currency","insert_after":"one_fm_basic_salary","module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Employee","fieldname":"custom_visa_expiry_date","label":"Visa Expiry Date","fieldtype":"Date","insert_after":"passport_number","in_list_view":1,"module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Employee","fieldname":"custom_project","label":"Primary Project","fieldtype":"Link","options":"Project","insert_after":"department","module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Employee","fieldname":"custom_trade","label":"Trade / Skill","fieldtype":"Select","options":"Mason\nCarpenter\nElectrician\nPlumber\nPainter\nLaborer\nDriver\nSupervisor\nEngineer\nOther","insert_after":"designation","module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Project","fieldname":"custom_client_country","label":"Client Country","fieldtype":"Select","options":"Qatar\nUAE\nOther","insert_after":"customer","module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Project","fieldname":"custom_client_email","label":"Client Contact Email","fieldtype":"Data","options":"Email","insert_after":"custom_client_country","module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Project","fieldname":"custom_client_name","label":"Client Contact Name","fieldtype":"Data","insert_after":"custom_client_email","module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Project","fieldname":"custom_feedback_enabled","label":"Monthly Feedback Enabled","fieldtype":"Check","default":"1","insert_after":"custom_client_name","module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Project","fieldname":"custom_contract_type","label":"Contract Type","fieldtype":"Select","options":"Lump Sum\nUnit Rate\nCost Plus\nTime & Material","insert_after":"project_type","module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Attendance","fieldname":"custom_project","label":"Project","fieldtype":"Link","options":"Project","insert_after":"company","module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Attendance","fieldname":"custom_site_location","label":"Site Location","fieldtype":"Data","insert_after":"custom_project","module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Attendance","fieldname":"custom_manpower_schedule","label":"Manpower Schedule","fieldtype":"Link","options":"Daily Manpower Schedule","insert_after":"custom_site_location","read_only":1,"module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Shift Assignment","fieldname":"custom_is_weekly_off","label":"Is Weekly Off","fieldtype":"Check","insert_after":"end_date","module":"Operations Module"},
+ {"doctype":"Custom Field","dt":"Shift Assignment","fieldname":"custom_planner_rule","label":"Planner Rule","fieldtype":"Link","options":"Weekly Off Planner","insert_after":"custom_is_weekly_off","module":"Operations Module"}
+]

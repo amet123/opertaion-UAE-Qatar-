@@ -1,0 +1,14 @@
+{
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"parameter","fieldtype":"Data","label":"Parameter","reqd":1,"in_list_view":1},
+  {"fieldname":"rating","fieldtype":"Rating","label":"Rating (1-5)","reqd":1,"in_list_view":1},
+  {"fieldname":"comments","fieldtype":"Small Text","label":"Comments","in_list_view":1}
+ ],
+ "istable": 1,
+ "module": "Operations Module",
+ "name": "Client Feedback Rating",
+ "owner": "Administrator"
+}

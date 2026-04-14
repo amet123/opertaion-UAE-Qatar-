@@ -1,0 +1,33 @@
+{
+ "actions": [],
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["country_labour_law","attendance_mode","kpi_compute_method","sb_ot","ot_rate_qatar","ot_rate_uae","ot_salary_component","cb","sb_alerts","notification_email","visa_alert_days","sb_feedback","feedback_portal_url","cb2"],
+ "fields": [
+  {"fieldname":"country_labour_law","fieldtype":"Select","label":"Country / Labour Law","options":"Qatar\nUAE\nBoth","reqd":1,"default":"Qatar","in_list_view":1},
+  {"fieldname":"attendance_mode","fieldtype":"Select","label":"Attendance Mode","options":"Manual\nBiometric","default":"Manual","reqd":1},
+  {"fieldname":"kpi_compute_method","fieldtype":"Select","label":"KPI Compute Method","options":"Script\nSimple","default":"Script","reqd":1},
+  {"fieldname":"sb_ot","fieldtype":"Section Break","label":"Overtime Settings"},
+  {"fieldname":"ot_rate_qatar","fieldtype":"Float","label":"OT Rate Qatar (multiplier)","default":"1.25","description":"Art. 74 — normal OT multiplier (night/Friday = 1.50 auto)"},
+  {"fieldname":"ot_rate_uae","fieldtype":"Float","label":"OT Rate UAE (multiplier)","default":"1.25","description":"Decree 33/2021 — normal OT multiplier (night/weekend = 1.50 auto)"},
+  {"fieldname":"ot_salary_component","fieldtype":"Link","label":"OT Salary Component","options":"Salary Component","default":"Overtime Pay"},
+  {"fieldname":"cb","fieldtype":"Column Break"},
+  {"fieldname":"sb_alerts","fieldtype":"Section Break","label":"Notifications & Alerts"},
+  {"fieldname":"notification_email","fieldtype":"Small Text","label":"Operations Manager Email(s)","description":"Comma-separated. Receives visa alerts, KPI breach, audit non-compliance."},
+  {"fieldname":"visa_alert_days","fieldtype":"Int","label":"Visa Alert — Days Before Expiry","default":"30"},
+  {"fieldname":"sb_feedback","fieldtype":"Section Break","label":"Client Feedback"},
+  {"fieldname":"feedback_portal_url","fieldtype":"Data","label":"Feedback Portal URL","read_only":1,"description":"Auto-set after Web Form publish"},
+  {"fieldname":"cb2","fieldtype":"Column Break"}
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Operations Module",
+ "name": "Operations Settings",
+ "owner": "Administrator",
+ "permissions": [{"role":"Operations Manager","read":1,"write":1,"create":0,"delete":0}],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

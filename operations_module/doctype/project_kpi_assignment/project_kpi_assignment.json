@@ -1,0 +1,23 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"naming_series","fieldtype":"Series","options":"PKPI-."},
+  {"fieldname":"project","fieldtype":"Link","label":"Project","options":"Project","reqd":1,"in_list_view":1},
+  {"fieldname":"kpi","fieldtype":"Link","label":"KPI","options":"KPI Master","reqd":1,"in_list_view":1},
+  {"fieldname":"target_value","fieldtype":"Float","label":"Target Value","reqd":1},
+  {"fieldname":"alert_threshold","fieldtype":"Float","label":"Alert Threshold"},
+  {"fieldname":"alert_email","fieldtype":"Data","label":"Alert Email (override)"},
+  {"fieldname":"frequency","fieldtype":"Select","label":"Frequency","options":"Daily\nWeekly\nMonthly","default":"Daily"},
+  {"fieldname":"is_active","fieldtype":"Check","label":"Is Active","default":1}
+ ],
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "module": "Operations Module",
+ "name": "Project KPI Assignment",
+ "owner": "Administrator",
+ "permissions": [{"role":"Operations Manager","read":1,"write":1,"create":1,"delete":1}]
+}

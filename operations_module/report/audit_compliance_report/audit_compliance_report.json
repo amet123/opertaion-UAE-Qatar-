@@ -1,0 +1,10 @@
+{
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "Report",
+ "is_standard": "No",
+ "module": "Operations Module",
+ "name": "Audit Compliance Report",
+ "ref_doctype": "Audit Checklist",
+ "report_type": "Script Report",
+ "roles": [{"role":"Operations Manager"},{"role":"Operations Viewer"}]
+}

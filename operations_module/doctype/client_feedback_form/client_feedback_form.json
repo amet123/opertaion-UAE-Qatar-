@@ -1,0 +1,33 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"naming_series","fieldtype":"Series","options":"CFB-.YYYY.-.MM.-"},
+  {"fieldname":"project","fieldtype":"Link","label":"Project","options":"Project","reqd":1,"in_list_view":1},
+  {"fieldname":"month_year","fieldtype":"Data","label":"Month / Year","reqd":1,"in_list_view":1},
+  {"fieldname":"client_name","fieldtype":"Data","label":"Client Name","in_list_view":1},
+  {"fieldname":"client_email","fieldtype":"Data","label":"Client Email"},
+  {"fieldname":"status","fieldtype":"Select","label":"Status","options":"Pending\nSubmitted\nReviewed","default":"Pending","in_list_view":1},
+  {"fieldname":"overall_score","fieldtype":"Float","label":"Overall Score","read_only":1},
+  {"fieldname":"access_token","fieldtype":"Data","label":"Access Token","hidden":1},
+  {"fieldname":"token_expiry","fieldtype":"Date","label":"Token Expiry","hidden":1},
+  {"fieldname":"sb_ratings","fieldtype":"Section Break","label":"Ratings"},
+  {"fieldname":"ratings","fieldtype":"Table","label":"Ratings","options":"Client Feedback Rating"},
+  {"fieldname":"sb_comment","fieldtype":"Section Break","label":"Overall Comment"},
+  {"fieldname":"overall_comment","fieldtype":"Text Editor","label":"Overall Comment"}
+ ],
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "module": "Operations Module",
+ "name": "Client Feedback Form",
+ "owner": "Administrator",
+ "permissions": [
+  {"role":"Operations Manager","read":1,"write":1,"create":1,"delete":1},
+  {"role":"Operations Viewer","read":1}
+ ],
+ "sort_field": "month_year",
+ "sort_order": "DESC"
+}

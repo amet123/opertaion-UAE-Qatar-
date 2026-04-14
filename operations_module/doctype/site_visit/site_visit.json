@@ -1,0 +1,33 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"naming_series","fieldtype":"Series","options":"SV-.YYYY.-.MM.-"},
+  {"fieldname":"project","fieldtype":"Link","label":"Project","options":"Project","reqd":1,"in_list_view":1},
+  {"fieldname":"zone","fieldtype":"Data","label":"Zone / Area","reqd":1,"in_list_view":1},
+  {"fieldname":"priority","fieldtype":"Select","label":"Priority","options":"High\nMedium\nLow","default":"Medium","in_list_view":1},
+  {"fieldname":"planned_date","fieldtype":"Date","label":"Planned Date","reqd":1},
+  {"fieldname":"visit_date","fieldtype":"Date","label":"Actual Visit Date"},
+  {"fieldname":"assigned_officer","fieldtype":"Link","label":"Assigned Officer","options":"User","reqd":1},
+  {"fieldname":"status","fieldtype":"Select","label":"Status","options":"Planned\nCompleted\nPostponed\nCancelled","default":"Planned","in_list_view":1},
+  {"fieldname":"purpose","fieldtype":"Small Text","label":"Purpose of Visit"},
+  {"fieldname":"sb_images","fieldtype":"Section Break","label":"Site Photos"},
+  {"fieldname":"site_images","fieldtype":"Table","label":"Site Photos","options":"Site Visit Image"},
+  {"fieldname":"sb_findings","fieldtype":"Section Break","label":"Visit Findings"},
+  {"fieldname":"findings","fieldtype":"Text Editor","label":"Findings / Observations"},
+  {"fieldname":"linked_inspection","fieldtype":"Link","label":"Linked Inspection Report","options":"Inspection Report"}
+ ],
+ "links": [],
+ "module": "Operations Module",
+ "name": "Site Visit",
+ "owner": "Administrator",
+ "permissions": [
+  {"role":"Operations Manager","read":1,"write":1,"create":1,"delete":1},
+  {"role":"Operations Supervisor","read":1,"write":1,"create":1}
+ ],
+ "sort_field": "planned_date",
+ "sort_order": "DESC"
+}

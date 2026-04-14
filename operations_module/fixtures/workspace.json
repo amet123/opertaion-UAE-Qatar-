@@ -1,0 +1,42 @@
+[{
+ "doctype": "Workspace",
+ "name": "Operations",
+ "title": "Operations",
+ "module": "Operations Module",
+ "icon": "fa fa-building",
+ "is_standard": 0,
+ "public": 1,
+ "shortcuts": [
+  {"type":"DocType","label":"Daily Manpower Schedule","link_to":"Daily Manpower Schedule","color":"grey"},
+  {"type":"DocType","label":"Site Visit","link_to":"Site Visit","color":"blue"},
+  {"type":"DocType","label":"Inspection Report","link_to":"Inspection Report","color":"orange"},
+  {"type":"DocType","label":"Audit Checklist","link_to":"Audit Checklist","color":"red"},
+  {"type":"DocType","label":"KPI Log","link_to":"KPI Log","color":"green"},
+  {"type":"DocType","label":"Client Feedback Form","link_to":"Client Feedback Form","color":"purple"},
+  {"type":"DocType","label":"Machinery Register","link_to":"Machinery Register","color":"grey"},
+  {"type":"DocType","label":"Weekly Off Planner","link_to":"Weekly Off Planner","color":"blue"},
+  {"type":"Page","label":"Operations Dashboard","link_to":"operations-dashboard","color":"green"}
+ ],
+ "cards": [
+  {"type":"Card","label":"Daily Operations","items":[
+   {"type":"DocType","label":"Daily Manpower Schedule","link_to":"Daily Manpower Schedule"},
+   {"type":"DocType","label":"Site Visit","link_to":"Site Visit"},
+   {"type":"DocType","label":"Weekly Off Planner","link_to":"Weekly Off Planner"},
+   {"type":"DocType","label":"Machinery Register","link_to":"Machinery Register"}
+  ]},
+  {"type":"Card","label":"Quality & Compliance","items":[
+   {"type":"DocType","label":"Inspection Report","link_to":"Inspection Report"},
+   {"type":"DocType","label":"Audit Checklist","link_to":"Audit Checklist"},
+   {"type":"DocType","label":"Training Schedule","link_to":"Training Schedule"}
+  ]},
+  {"type":"Card","label":"KPI & Reporting","items":[
+   {"type":"DocType","label":"KPI Master","link_to":"KPI Master"},
+   {"type":"DocType","label":"KPI Log","link_to":"KPI Log"},
+   {"type":"DocType","label":"Project KPI Assignment","link_to":"Project KPI Assignment"},
+   {"type":"DocType","label":"Client Feedback Form","link_to":"Client Feedback Form"}
+  ]},
+  {"type":"Card","label":"Settings","items":[
+   {"type":"DocType","label":"Operations Settings","link_to":"Operations Settings"}
+  ]}
+ ]
+}]

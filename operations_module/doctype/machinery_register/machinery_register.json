@@ -1,0 +1,29 @@
+{
+ "actions": [],
+ "autoname": "field:serial_no",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"serial_no","fieldtype":"Data","label":"Serial Number","reqd":1,"in_list_view":1},
+  {"fieldname":"machinery_name","fieldtype":"Data","label":"Machinery Name","reqd":1,"in_list_view":1},
+  {"fieldname":"machinery_type","fieldtype":"Select","label":"Type","options":"Heavy Equipment\nLight Vehicle\nPower Tool\nSafety Equipment\nOther","in_list_view":1},
+  {"fieldname":"project","fieldtype":"Link","label":"Assigned Project","options":"Project","in_list_view":1},
+  {"fieldname":"status","fieldtype":"Select","label":"Status","options":"Active\nUnder Maintenance\nDecommissioned","default":"Active","in_list_view":1},
+  {"fieldname":"make","fieldtype":"Data","label":"Make / Brand"},
+  {"fieldname":"model","fieldtype":"Data","label":"Model"},
+  {"fieldname":"year","fieldtype":"Int","label":"Year"},
+  {"fieldname":"service_due_date","fieldtype":"Date","label":"Next Service Due"},
+  {"fieldname":"insurance_expiry","fieldtype":"Date","label":"Insurance Expiry"},
+  {"fieldname":"notes","fieldtype":"Small Text","label":"Notes"}
+ ],
+ "links": [],
+ "module": "Operations Module",
+ "name": "Machinery Register",
+ "owner": "Administrator",
+ "permissions": [
+  {"role":"Operations Manager","read":1,"write":1,"create":1,"delete":1},
+  {"role":"Operations Supervisor","read":1,"write":1}
+ ],
+ "sort_field": "machinery_name"
+}

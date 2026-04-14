@@ -1,0 +1,5 @@
+[
+ {"doctype":"Role","role_name":"Operations Manager","desk_access":1},
+ {"doctype":"Role","role_name":"Operations Supervisor","desk_access":1},
+ {"doctype":"Role","role_name":"Operations Viewer","desk_access":1}
+]

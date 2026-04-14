@@ -1,0 +1,26 @@
+{
+ "actions": [],
+ "autoname": "field:kpi_name",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"kpi_name","fieldtype":"Data","label":"KPI Name","reqd":1,"in_list_view":1},
+  {"fieldname":"unit","fieldtype":"Select","label":"Unit","options":"%\nHours\nQAR\nAED\nCount\nScore\nDays","default":"%","in_list_view":1},
+  {"fieldname":"frequency","fieldtype":"Select","label":"Compute Frequency","options":"Daily\nWeekly\nMonthly","default":"Daily"},
+  {"fieldname":"alert_threshold","fieldtype":"Float","label":"Alert Threshold","description":"Alert fires when actual < this value"},
+  {"fieldname":"description","fieldtype":"Small Text","label":"Description"},
+  {"fieldname":"sb_script","fieldtype":"Section Break","label":"Compute Script"},
+  {"fieldname":"compute_script","fieldtype":"Code","label":"Python Compute Script","options":"Python","description":"Must set: result = <numeric value>. Context: frappe, project, date"}
+ ],
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "module": "Operations Module",
+ "name": "KPI Master",
+ "owner": "Administrator",
+ "permissions": [
+  {"role":"Operations Manager","read":1,"write":1,"create":1,"delete":1}
+ ],
+ "sort_field": "kpi_name",
+ "title_field": "kpi_name"
+}

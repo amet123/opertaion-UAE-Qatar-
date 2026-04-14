@@ -1,0 +1,22 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"naming_series","fieldtype":"Series","options":"WOP-"},
+  {"fieldname":"rule_name","fieldtype":"Data","label":"Rule Name","reqd":1,"in_list_view":1},
+  {"fieldname":"employee_group","fieldtype":"Link","label":"Employee Group","options":"Employee Group","in_list_view":1},
+  {"fieldname":"company","fieldtype":"Link","label":"Company","options":"Company","reqd":1},
+  {"fieldname":"cycle_days","fieldtype":"Int","label":"Cycle Days","default":7,"reqd":1},
+  {"fieldname":"effective_date","fieldtype":"Date","label":"Effective Date","reqd":1},
+  {"fieldname":"is_active","fieldtype":"Check","label":"Is Active","default":1},
+  {"fieldname":"pattern","fieldtype":"Small Text","label":"Pattern Description","description":"e.g. Day 7 = off, Day 14 = off"}
+ ],
+ "links": [],
+ "module": "Operations Module",
+ "name": "Weekly Off Planner",
+ "owner": "Administrator",
+ "permissions": [{"role":"Operations Manager","read":1,"write":1,"create":1,"delete":1}]
+}

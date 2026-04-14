@@ -1,0 +1,16 @@
+{
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"item","fieldtype":"Data","label":"Checklist Item","reqd":1,"in_list_view":1},
+  {"fieldname":"is_compliant","fieldtype":"Check","label":"Compliant","default":1,"in_list_view":1},
+  {"fieldname":"severity","fieldtype":"Select","label":"Severity (if NC)","options":"\nCritical\nMajor\nMinor","in_list_view":1},
+  {"fieldname":"corrective_action","fieldtype":"Small Text","label":"Corrective Action"},
+  {"fieldname":"due_date","fieldtype":"Date","label":"Due Date"}
+ ],
+ "istable": 1,
+ "module": "Operations Module",
+ "name": "Audit Checklist Item",
+ "owner": "Administrator"
+}

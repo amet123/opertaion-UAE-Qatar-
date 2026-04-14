@@ -1,0 +1,20 @@
+{
+ "actions": [],
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"employee","fieldtype":"Link","label":"Employee","options":"Employee","reqd":1,"in_list_view":1},
+  {"fieldname":"employee_name","fieldtype":"Data","label":"Employee Name","fetch_from":"employee.employee_name","read_only":1,"in_list_view":1},
+  {"fieldname":"designation","fieldtype":"Data","label":"Designation","fetch_from":"employee.designation","read_only":1},
+  {"fieldname":"status","fieldtype":"Select","label":"Status","options":"Present\nAbsent\nHalf Day\nOn Leave\nLate","default":"Present","reqd":1,"in_list_view":1},
+  {"fieldname":"ot_hours","fieldtype":"Float","label":"OT Hours","in_list_view":1},
+  {"fieldname":"remarks","fieldtype":"Small Text","label":"Remarks"}
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "module": "Operations Module",
+ "name": "Manpower Employee Detail",
+ "owner": "Administrator"
+}

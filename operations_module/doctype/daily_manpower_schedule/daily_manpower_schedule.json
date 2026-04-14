@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["naming_series","project","date","shift","site_location","company","shift_start_time","shift_end_time","cb1","status","total_employees","total_present","total_absent","sb_emp","employees","sb_summary","notes"],
+ "fields": [
+  {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"DMS-.YYYY.-.MM.-."},
+  {"fieldname":"project","fieldtype":"Link","label":"Project","options":"Project","reqd":1,"in_list_view":1},
+  {"fieldname":"date","fieldtype":"Date","label":"Date","reqd":1,"default":"Today","in_list_view":1},
+  {"fieldname":"shift","fieldtype":"Link","label":"Shift Type","options":"Shift Type","reqd":1},
+  {"fieldname":"site_location","fieldtype":"Data","label":"Site Location"},
+  {"fieldname":"company","fieldtype":"Link","label":"Company","options":"Company","reqd":1},
+  {"fieldname":"shift_start_time","fieldtype":"Time","label":"Shift Start Time"},
+  {"fieldname":"shift_end_time","fieldtype":"Time","label":"Shift End Time"},
+  {"fieldname":"cb1","fieldtype":"Column Break"},
+  {"fieldname":"status","fieldtype":"Select","label":"Status","options":"Draft\nSubmitted\nCancelled","default":"Draft","in_list_view":1},
+  {"fieldname":"total_employees","fieldtype":"Int","label":"Total Employees","read_only":1},
+  {"fieldname":"total_present","fieldtype":"Int","label":"Total Present","read_only":1},
+  {"fieldname":"total_absent","fieldtype":"Int","label":"Total Absent","read_only":1},
+  {"fieldname":"sb_emp","fieldtype":"Section Break","label":"Employee Attendance"},
+  {"fieldname":"employees","fieldtype":"Table","label":"Employees","options":"Manpower Employee Detail"},
+  {"fieldname":"sb_summary","fieldtype":"Section Break","label":"Notes"},
+  {"fieldname":"notes","fieldtype":"Text Editor","label":"Supervisor Notes"}
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Operations Module",
+ "name": "Daily Manpower Schedule",
+ "owner": "Administrator",
+ "permissions": [
+  {"role":"Operations Manager","read":1,"write":1,"create":1,"delete":1,"submit":1,"cancel":1,"amend":1},
+  {"role":"Operations Supervisor","read":1,"write":1,"create":1,"submit":1}
+ ],
+ "sort_field": "date",
+ "sort_order": "DESC",
+ "title_field": "project",
+ "track_changes": 1
+}

@@ -1,0 +1,18 @@
+{
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname":"finding","fieldtype":"Small Text","label":"Finding","reqd":1,"in_list_view":1},
+  {"fieldname":"severity","fieldtype":"Select","label":"Severity","options":"Critical\nMajor\nMinor\nObservation","reqd":1,"in_list_view":1},
+  {"fieldname":"image","fieldtype":"Attach Image","label":"Photo"},
+  {"fieldname":"corrective_action","fieldtype":"Small Text","label":"Corrective Action","in_list_view":1},
+  {"fieldname":"responsible","fieldtype":"Link","label":"Responsible","options":"User"},
+  {"fieldname":"due_date","fieldtype":"Date","label":"Due Date","in_list_view":1},
+  {"fieldname":"status","fieldtype":"Select","label":"Status","options":"Open\nIn Progress\nClosed","default":"Open"}
+ ],
+ "istable": 1,
+ "module": "Operations Module",
+ "name": "Inspection Finding",
+ "owner": "Administrator"
+}
