@@ -1,0 +1,9 @@
+{
+  "name": "operations_module",
+  "version": "1.0.0",
+  "description": "Operations Module for ERPNext 15 — Qatar/UAE",
+  "scripts": {
+    "build": "echo 'No frontend assets to build'"
+  },
+  "devDependencies": {}
+}

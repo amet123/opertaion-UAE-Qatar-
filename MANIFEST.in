@@ -1,2 +1,4 @@
 include requirements.txt
-recursive-include operations_module *.json *.js *.css *.html *.py
+recursive-include operations_module *.json *.js *.css *.html *.py *.md *.txt *.svg *.png
+global-exclude *.pyc
+global-exclude __pycache__
